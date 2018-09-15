@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/totalValue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="example.coolp.hw1_groups14.MainActivity">
+
+    <TextView
+        android:id="@+id/billTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/billtotal"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/tipPrecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/billTotal"
+        android:layout_alignStart="@+id/billTotal"
+        android:layout_below="@+id/billTotal"
+        android:layout_marginTop="31dp"
+        android:text="@string/tip"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/customLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tipPrecent"
+        android:layout_alignStart="@+id/tipPrecent"
+        android:layout_below="@+id/tipPrecent"
+        android:layout_marginTop="19dp"
+        android:text="@string/custom"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/tipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/customLabel"
+        android:layout_alignStart="@+id/customLabel"
+        android:layout_below="@+id/customLabel"
+        android:layout_marginTop="35dp"
+        android:text="@string/tipText"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tipLabel"
+        android:layout_alignStart="@+id/tipLabel"
+        android:layout_below="@+id/tipLabel"
+        android:layout_marginTop="30dp"
+        android:text="@string/total"
+        android:textColor="@android:color/background_dark" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/totalLabel"
+        android:layout_marginTop="27dp"
+        android:text="@string/exit" />
+
+    <EditText
+        android:id="@+id/billText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="26dp"
+        android:layout_toEndOf="@+id/billTotal"
+        android:layout_toRightOf="@+id/billTotal"
+        android:ems="10"
+        android:hint="@string/hintBill"
+        android:inputType="numberDecimal"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/billText"
+        android:layout_alignStart="@+id/billText"
+        android:layout_alignTop="@+id/tipPrecent"
+        android:orientation='horizontal'>
+
+        <RadioButton
+            android:id="@+id/rb10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/radioGroup"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/tip10" />
+
+        <RadioButton
+            android:id="@+id/rb15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/radioGroup"
+            android:layout_alignLeft="@+id/billText"
+            android:layout_alignStart="@+id/billText"
+            android:layout_weight="1"
+            android:text="@string/tip15" />
+
+        <RadioButton
+            android:id="@+id/rb18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rb18" />
+
+        <RadioButton
+            android:id="@+id/rbCustom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/custom" />
+    </RadioGroup>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progress"
+        android:layout_alignLeft="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup"
+        android:max="50"/>
+
+    <TextView
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tipLabel"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/seekBar"
+        android:layout_toRightOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/tipValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tipLabel"
+        android:layout_alignBottom="@+id/tipLabel"
+        android:layout_alignLeft="@+id/seekBar"
+        android:layout_alignStart="@+id/seekBar"
+        android:text="@string/Zero"
+        />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonExit"
+        android:layout_alignLeft="@+id/tipValue"
+        android:layout_alignStart="@+id/tipValue"
+        android:text="@string/Zero" />
+
+
+</RelativeLayout>
